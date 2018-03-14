@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="icg"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="clang"/>
+		<Option virtualFolders="CMake Files\;CMake Files\common\;CMake Files\transform\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="update_opengp">
+				<Option working_dir="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 update_opengp"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="common_headers">
+				<Option working_dir="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 common_headers"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="transform">
+				<Option output="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/transform/transform" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/transform"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DWITH_EIGEN"/>
+					<Add option="-DOPENGP_HEADERONLY"/>
+					<Add option="-DUSE_EIGEN"/>
+					<Add option="-DWITH_OPENGP"/>
+					<Add option="-DWITH_OPENGL"/>
+					<Add option="-DGLEW_STATIC"/>
+					<Add option="-DWITH_GLEW"/>
+					<Add option="-DWITH_GLFW"/>
+					<Add directory="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common"/>
+					<Add directory="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/external/eigen/include"/>
+					<Add directory="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/../external/OpenGP/src"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/transform/Makefile&quot;  VERBOSE=1 transform"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/transform/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/transform/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/transform/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="transform/fast">
+				<Option output="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/transform/transform" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/transform"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DWITH_EIGEN"/>
+					<Add option="-DOPENGP_HEADERONLY"/>
+					<Add option="-DUSE_EIGEN"/>
+					<Add option="-DWITH_OPENGP"/>
+					<Add option="-DWITH_OPENGL"/>
+					<Add option="-DGLEW_STATIC"/>
+					<Add option="-DWITH_GLEW"/>
+					<Add option="-DWITH_GLFW"/>
+					<Add directory="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common"/>
+					<Add directory="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/external/eigen/include"/>
+					<Add directory="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/../external/OpenGP/src"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/transform/Makefile&quot;  VERBOSE=1 transform/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/transform/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/transform/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/transform/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/MLogger.h">
+			<Option target="common_headers"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/bmpwrite.h">
+			<Option target="common_headers"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/check_error_gl.h">
+			<Option target="common_headers"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/icg_common.h">
+			<Option target="common_headers"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/imshow.h">
+			<Option target="common_headers"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/picoPNG.h">
+			<Option target="common_headers"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/png.h">
+			<Option target="common_headers"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/transform/Mesh/Mesh.h">
+			<Option target="transform"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/transform/Mesh/Mesh_fshader.glsl">
+			<Option target="transform"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/transform/Mesh/Mesh_vshader.glsl">
+			<Option target="transform"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/transform/main.cpp">
+			<Option target="transform"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/config.cmake">
+			<Option virtualFolder="CMake Files\common\"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/Eigen.cmake">
+			<Option virtualFolder="CMake Files\common\"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/FindEigen3.cmake">
+			<Option virtualFolder="CMake Files\common\"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/OpenGP.cmake">
+			<Option virtualFolder="CMake Files\common\"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/FindOpenGP.cmake">
+			<Option virtualFolder="CMake Files\common\"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/OpenGL.cmake">
+			<Option virtualFolder="CMake Files\common\"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/GLEW.cmake">
+			<Option virtualFolder="CMake Files\common\"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/FindGLEW.cmake">
+			<Option virtualFolder="CMake Files\common\"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/GLFW.cmake">
+			<Option virtualFolder="CMake Files\common\"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/FindGLFW3.cmake">
+			<Option virtualFolder="CMake Files\common\"/>
+		</Unit>
+		<Unit filename="/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/transform/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\transform\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

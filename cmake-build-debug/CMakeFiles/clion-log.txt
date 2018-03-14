@@ -1,0 +1,8 @@
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/scottgoerzen/Desktop/CSC_305/CSC305A3
+-- Intro to Graphics - Loading Common Configuration
+-- OPENGP: /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/common/../external/OpenGP/src/
+-- Found GLEW: /usr/local/lib/libGLEW.dylib
+-- Found GLFW3: /usr/local/lib/libglfw.dylib
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug
