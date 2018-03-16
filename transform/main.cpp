@@ -28,8 +28,13 @@ void display(){
 
     // **** Sun transform
     Transform sun_M = Transform::Identity();
-    sun_M *= Eigen::Translation3f(0.2, 0.0, 0.0);
-    sun_M *= Eigen::AngleAxisf(-freq/SUN_ROT_PERIOD, Eigen::Vector3f::UnitZ());
+
+    float x_sun_orbit = 1*std::cos(-freq/EARTH_ORBITAL_PERIOD);
+    float y_sun_orbit = 1*std::sin(-freq/EARTH_ORBITAL_PERIOD);
+
+    sun_M *= Eigen::Translation3f(x_sun_orbit, y_sun_orbit-1, 1.0);
+    //sun_M *= Eigen::Translation3f(0, -1, 0.0);
+    sun_M *= Eigen::AngleAxisf(freq/SUN_ROT_PERIOD, Eigen::Vector3f::UnitZ());
     //scale_t: make the sun become bigger and smaller over the time!
     float scale_t = 0.01*std::sin(freq);
     sun_M *= Eigen::AlignedScaling3f(0.2 +scale_t, 0.2 +scale_t, 1.0);
@@ -37,7 +42,7 @@ void display(){
     // **** Earth transform
     Transform earth_M = Transform::Identity();
     //calculate the earth's orbit as an ellipse around the sun
-    float x_earth_orbit = 0.7*std::cos(-freq/EARTH_ORBITAL_PERIOD);
+    float x_earth_orbit = 0.5*std::cos(-freq/EARTH_ORBITAL_PERIOD);
     float y_earth_orbit = 0.5*std::sin(-freq/EARTH_ORBITAL_PERIOD);
     earth_M *= Eigen::Translation3f(x_earth_orbit, y_earth_orbit, 0.0);
     //save the earth's transform before spinning, so we don't spin the moon
@@ -48,20 +53,28 @@ void display(){
     earth_M *= Eigen::AlignedScaling3f(0.08, 0.08, 1.0);
 
     // **** Moon transform
-    Transform moon_M = earth_M_prespin;
+    //Transform moon_M = earth_M_prespin;
+    Transform moon_M = Transform::Identity();
+
+    float x_moon_orbit = -(1*std::cos(-freq/EARTH_ORBITAL_PERIOD));
+    float y_moon_orbit = -(1*std::sin(-freq/EARTH_ORBITAL_PERIOD));
+
+    moon_M *= Eigen::Translation3f(x_moon_orbit, y_moon_orbit-1, -1.0);
     // Make the moon orbit around the earth with 0.2 units of distance
-    moon_M *= Eigen::AngleAxisf(freq/MOON_ORBITAL_PERIOD, Eigen::Vector3f::UnitZ());
-    moon_M *= Eigen::Translation3f(0.2, 0.0, 0.0);
+    //moon_M *= Eigen::AngleAxisf(freq/MOON_ORBITAL_PERIOD, Eigen::Vector3f::UnitZ());
+    //moon_M *= Eigen::Translation3f(0.2, 0.0, 0.0);
     // Make the moon spining according to MOON_ROT_PERIOD
-    moon_M *= Eigen::AngleAxisf(-freq/MOON_ROT_PERIOD, -Eigen::Vector3f::UnitZ());
+    moon_M *= Eigen::AngleAxisf(-freq/MOON_ROT_PERIOD, Eigen::Vector3f::UnitZ());
     // Make the picture of moon smaller!
-    moon_M *= Eigen::AlignedScaling3f(0.04, 0.04, 1.0);
+    moon_M *= Eigen::AlignedScaling3f(0.1 +scale_t, 0.1 +scale_t, 1.0);
+    //moon_M *= Eigen::AlignedScaling3f(0.04, 0.04, 1.0);
 
     // draw the sun, the earth and the moon
     sun.draw(sun_M.matrix());
-    earth.draw(earth_M.matrix());
+    //earth.draw(earth_M.matrix());
     moon.draw(moon_M.matrix());
 }
+
 
 int main(int, char**){
     glfwInitWindowSize(512, 512);
