@@ -7,8 +7,8 @@ using namespace OpenGP;
 typedef Eigen::Transform<float,3,Eigen::Affine> Transform;
 
 const int SUN_ROT_PERIOD = 30;        
-const int EARTH_ROT_PERIOD = 4;       
-const int MOON_ROT_PERIOD = 8;       
+const int EARTH_ROT_PERIOD = 7;
+const int MOON_ROT_PERIOD = 9;
 const int EARTH_ORBITAL_PERIOD = 10; 
 const int MOON_ORBITAL_PERIOD = 5;   
 const int SPEED_FACTOR = 1;
@@ -32,7 +32,7 @@ void display(){
     float x_sun_orbit = 1*std::cos(-freq/EARTH_ORBITAL_PERIOD);
     float y_sun_orbit = 1*std::sin(-freq/EARTH_ORBITAL_PERIOD);
 
-    sun_M *= Eigen::Translation3f(x_sun_orbit, y_sun_orbit-1, 1.0);
+    sun_M *= Eigen::Translation3f(x_sun_orbit, y_sun_orbit, 0.0);
     //sun_M *= Eigen::Translation3f(0, -1, 0.0);
     sun_M *= Eigen::AngleAxisf(freq/SUN_ROT_PERIOD, Eigen::Vector3f::UnitZ());
     //scale_t: make the sun become bigger and smaller over the time!
@@ -41,7 +41,7 @@ void display(){
 
     // **** Earth transform
     Transform earth_M = Transform::Identity();
-    //calculate the earth's orbit as an ellipse around the sun
+   /* //calculate the earth's orbit as an ellipse around the sun
     float x_earth_orbit = 0.5*std::cos(-freq/EARTH_ORBITAL_PERIOD);
     float y_earth_orbit = 0.5*std::sin(-freq/EARTH_ORBITAL_PERIOD);
     earth_M *= Eigen::Translation3f(x_earth_orbit, y_earth_orbit, 0.0);
@@ -50,7 +50,7 @@ void display(){
     Transform earth_M_prespin = earth_M;
     earth_M *= Eigen::AngleAxisf(-freq/EARTH_ROT_PERIOD, Eigen::Vector3f::UnitZ());
     //make the picture of earth smaller
-    earth_M *= Eigen::AlignedScaling3f(0.08, 0.08, 1.0);
+    earth_M *= Eigen::AlignedScaling3f(0.08, 0.08, 1.0);*/
 
     // **** Moon transform
     //Transform moon_M = earth_M_prespin;
@@ -59,7 +59,7 @@ void display(){
     float x_moon_orbit = -(1*std::cos(-freq/EARTH_ORBITAL_PERIOD));
     float y_moon_orbit = -(1*std::sin(-freq/EARTH_ORBITAL_PERIOD));
 
-    moon_M *= Eigen::Translation3f(x_moon_orbit, y_moon_orbit-1, -1.0);
+    moon_M *= Eigen::Translation3f(x_moon_orbit, y_moon_orbit, 0.0);
     // Make the moon orbit around the earth with 0.2 units of distance
     //moon_M *= Eigen::AngleAxisf(freq/MOON_ORBITAL_PERIOD, Eigen::Vector3f::UnitZ());
     //moon_M *= Eigen::Translation3f(0.2, 0.0, 0.0);
@@ -70,15 +70,17 @@ void display(){
     //moon_M *= Eigen::AlignedScaling3f(0.04, 0.04, 1.0);
 
     // draw the sun, the earth and the moon
+
     sun.draw(sun_M.matrix());
-    //earth.draw(earth_M.matrix());
     moon.draw(moon_M.matrix());
+    
+    earth.draw(earth_M.matrix());
 }
 
 
 int main(int, char**){
     glfwInitWindowSize(512, 512);
-    glfwMakeWindow("Planets");
+    glfwMakeWindow("Assignment 3");
     glfwDisplayFunc(display);
     init();
     glfwMainLoop();
@@ -122,5 +124,5 @@ void init(){
 
     sun.loadTextures("sun.png");
     moon.loadTextures("moon.png");
-    earth.loadTextures("earth.png");
+    earth.loadTextures("back.png");
 }
