@@ -1457,6 +1457,8 @@ OpenGP/GL/glfw_helpers.h
 /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/transform/OpenGP/GL/glfw_helpers.h
 Mesh/Mesh.h
 /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/transform/Mesh/Mesh.h
+math.h
+-
 
 /usr/local/include/GL/glew.h
 stddef.h

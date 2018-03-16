@@ -1334,17 +1334,17 @@ Eigen/src/Core/util/MKL_support.h
 
 ../external/eigen/include/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
-/Users/scottgoerzen/Desktop/CSC_305/Lab7/icg/mouse/line_fshader.glsl
+/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/mouse/line_fshader.glsl
 
-/Users/scottgoerzen/Desktop/CSC_305/Lab7/icg/mouse/line_vshader.glsl
+/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/mouse/line_vshader.glsl
 
-/Users/scottgoerzen/Desktop/CSC_305/Lab7/icg/mouse/main.cpp
+/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/mouse/main.cpp
 OpenGP/GL/Application.h
 -
 line_vshader.glsl
-/Users/scottgoerzen/Desktop/CSC_305/Lab7/icg/mouse/line_vshader.glsl
+/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/mouse/line_vshader.glsl
 line_fshader.glsl
-/Users/scottgoerzen/Desktop/CSC_305/Lab7/icg/mouse/line_fshader.glsl
+/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/mouse/line_fshader.glsl
 
 /usr/local/include/GL/glew.h
 stddef.h

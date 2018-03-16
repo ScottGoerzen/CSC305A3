@@ -236,8 +236,8 @@ mouse/CMakeFiles/mouse.dir/main.cpp.o
  ../external/eigen/include/Eigen/src/plugins/CommonCwiseUnaryOps.h
  ../external/eigen/include/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  ../external/eigen/include/Eigen/src/plugins/MatrixCwiseUnaryOps.h
- /Users/scottgoerzen/Desktop/CSC_305/Lab7/icg/mouse/line_fshader.glsl
- /Users/scottgoerzen/Desktop/CSC_305/Lab7/icg/mouse/line_vshader.glsl
- /Users/scottgoerzen/Desktop/CSC_305/Lab7/icg/mouse/main.cpp
+ /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/mouse/line_fshader.glsl
+ /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/mouse/line_vshader.glsl
+ /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/mouse/main.cpp
  /usr/local/include/GL/glew.h
  /usr/local/include/GLFW/glfw3.h
