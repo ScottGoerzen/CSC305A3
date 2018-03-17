@@ -1,7 +1,18 @@
 #include "OpenGP/GL/Eigen.h"
 #include "OpenGP/GL/glfw_helpers.h"
 #include "Mesh/Mesh.h"
-#include <math.h>
+#include <OpenGP/GL/Application.h>
+#include <fstream>
+
+const int width=512, height=512;
+#define POINTSIZE 10.0f
+
+const char* line_vshader =
+#include "line_vshader.glsl"
+;
+const char* line_fshader =
+#include "line_fshader.glsl"
+;
 
 using namespace OpenGP;
 
@@ -12,7 +23,6 @@ const int BIKE_ROT_PERIOD = 2;
 const int WHEEL_ROT_PERIOD = 1;
 const int MOON_ROT_PERIOD = 9;
 const int EARTH_ORBITAL_PERIOD = 10; 
-const int MOON_ORBITAL_PERIOD = 5;   
 const int SPEED_FACTOR = 1;
     
 Mesh sun;
@@ -28,23 +38,28 @@ std::unique_ptr<GPUMesh> line;
 std::vector<Vec2> controlPoints;
 
 
+void update() {
+    std::ifstream file;
+    file.open("../mouse/controls.txt");
+    std::string input;
+    for (int i = 0; i < 4; i++) {
+        file >> input;
+        controlPoints[i].x() = atof(input.c_str());
+        file >> input;
+        controlPoints[i].y() = atof(input.c_str());
+    }
+    file.close();
+}
+
 void display(){
+
+    update();
+
     glClear(GL_COLOR_BUFFER_BIT);
     float time_s = glfwGetTime();
 
     //TODO: Set up the transform hierarchies for the three objects!
     float freq = M_PI*time_s*SPEED_FACTOR;
-
-    /*Vec2 position = Vec2(0,0);
-    Vec2 *selection = nullptr;
-
-    lineShader->bind();
-    // Draw points red and selected point blue
-    if(selection!=nullptr) lineShader->set_uniform("selection", int(selection-&controlPoints[0]));
-    line->set_mode(GL_POINTS);
-    line->draw();
-
-    lineShader->unbind();*/
 
     // **** Sun transform
     Transform sun_M = Transform::Identity();
@@ -63,10 +78,7 @@ void display(){
     Transform bike_M = Transform::Identity();
     //Calculate position along bezier curve
     float time_b = (fmod(freq/4,M_PI))/M_PI;
-    //std::cout<< time_b << std::endl;
-    //float x_bike_path = ;
-    //float y_bike_path = ;
-    //MatMxN bpoint = std::powf(1-time_b, 3)*controlPoints[0]+3*std::powf(1-time_b, 2)*time_b*controlPoints[1]+3*(1-time_b)*std::powf(time_b, 2)*controlPoints[2]+std::powf(time_b, 3)*controlPoints[3];
+
     Vec2 bpoint = std::powf(1-time_b, 3)*controlPoints[0]+3*std::powf(1-time_b, 2)*time_b*controlPoints[1]+3*(1-time_b)*std::powf(time_b, 2)*controlPoints[2]+std::powf(time_b, 3)*controlPoints[3];
     bike_M *= Eigen::Translation3f(bpoint.x(), bpoint.y(), 0.0);
 
@@ -95,16 +107,7 @@ void display(){
 
     // **** Earth transform
     Transform earth_M = Transform::Identity();
-   /* //calculate the earth's orbit as an ellipse around the sun
-    float x_earth_orbit = 0.5*std::cos(-freq/EARTH_ORBITAL_PERIOD);
-    float y_earth_orbit = 0.5*std::sin(-freq/EARTH_ORBITAL_PERIOD);
-    earth_M *= Eigen::Translation3f(x_earth_orbit, y_earth_orbit, 0.0);
-    //save the earth's transform before spinning, so we don't spin the moon
-    //with the earth!
-    Transform earth_M_prespin = earth_M;
-    earth_M *= Eigen::AngleAxisf(-freq/EARTH_ROT_PERIOD, Eigen::Vector3f::UnitZ());
-    //make the picture of earth smaller
-    earth_M *= Eigen::AlignedScaling3f(0.08, 0.08, 1.0);*/
+
 
     // **** Moon transform
     //Transform moon_M = earth_M_prespin;
@@ -134,15 +137,21 @@ void display(){
     wheel1.draw(wheel1_M.matrix());
     wheel2.draw(wheel2_M.matrix());
 
+
+
 }
 
 
 int main(int, char**){
-    glfwInitWindowSize(512, 512);
+    glfwInitWindowSize(height, width);
+
+    //int thing = mouse();
+
     glfwMakeWindow("Assignment 3");
     glfwDisplayFunc(display);
     init();
     glfwMainLoop();
+
     return EXIT_SUCCESS;
 }
 
@@ -159,11 +168,32 @@ void init(){
     wheel1.init();
     wheel2.init();
 
+
+    glClearColor(1,1,1, /*solid*/1.0 );
+
+    lineShader = std::unique_ptr<Shader>(new Shader());
+    lineShader->verbose = true;
+    lineShader->add_vshader_from_source(line_vshader);
+    lineShader->add_fshader_from_source(line_fshader);
+    lineShader->link();
+
+    //controlPoints = std::vector<Vec2>();
+    //controlPoints.push_back(Vec2(-0.7f,-0.2f));
+    //controlPoints.push_back(Vec2(-0.3f, 0.2f));
+    //controlPoints.push_back(Vec2( 0.3f, 0.5f));
+    //controlPoints.push_back(Vec2( 0.7f, 0.0f));
+
+    line = std::unique_ptr<GPUMesh>(new GPUMesh());
+    line->set_vbo<Vec2>("vposition", controlPoints);
+    std::vector<unsigned int> indices = {0,1,2,3};
+    line->set_triangles(indices);
+
     controlPoints = std::vector<Vec2>();
-    controlPoints.push_back(Vec2(-0.7f,-0.2f));
-    controlPoints.push_back(Vec2(-0.7f, 1.0f));
-    controlPoints.push_back(Vec2( 0.3f, 0.5f));
-    controlPoints.push_back(Vec2( 0.7f, 0.0f));
+    //controlPoints.push_back(Vec2(-0.7f,-0.2f));
+    //controlPoints.push_back(Vec2(-0.7f, 1.0f));
+    //controlPoints.push_back(Vec2( 0.3f, 0.5f));
+    //controlPoints.push_back(Vec2( 0.7f, 0.0f));
+    update();
 
     std::vector<OpenGP::Vec3> quadVert;
     quadVert.push_back(OpenGP::Vec3(-1.0f, -1.0f, 0.0f));

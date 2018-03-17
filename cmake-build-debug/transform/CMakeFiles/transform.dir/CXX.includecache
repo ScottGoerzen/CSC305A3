@@ -6,6 +6,32 @@
 
 #IncludeRegexTransform: 
 
+../common/../external/OpenGP/src/OpenGP/GL/Application.cpp
+vector
+-
+Application.h
+../common/../external/OpenGP/src/OpenGP/GL/Application.h
+OpenGP/MLogger.h
+-
+OpenGP/GL/gl_debug.h
+-
+
+../common/../external/OpenGP/src/OpenGP/GL/Application.h
+list
+-
+memory
+-
+OpenGP/headeronly.h
+-
+OpenGP/GL/Window.h
+-
+OpenGP/GL/Framebuffer.h
+-
+OpenGP/GL/FullscreenQuad.h
+-
+Application.cpp
+../common/../external/OpenGP/src/OpenGP/GL/Application.cpp
+
 ../common/../external/OpenGP/src/OpenGP/GL/Buffer.h
 OpenGP/GL/gl.h
 -
@@ -20,6 +46,24 @@ vector
 OpenGP/types.h
 -
 Eigen/Geometry
+-
+
+../common/../external/OpenGP/src/OpenGP/GL/EventProvider.h
+unordered_map
+-
+memory
+-
+typeindex
+-
+list
+-
+iostream
+-
+
+../common/../external/OpenGP/src/OpenGP/GL/Framebuffer.h
+OpenGP/GL/gl.h
+-
+OpenGP/GL/Texture.h
 -
 
 ../common/../external/OpenGP/src/OpenGP/GL/FullscreenQuad.h
@@ -160,6 +204,36 @@ TrackballCamera.cpp
 OpenGP/GL/gl.h
 -
 
+../common/../external/OpenGP/src/OpenGP/GL/Window.cpp
+cassert
+-
+OpenGP/MLogger.h
+-
+OpenGP/GL/gl_debug.h
+-
+Window.h
+../common/../external/OpenGP/src/OpenGP/GL/Window.h
+
+../common/../external/OpenGP/src/OpenGP/GL/Window.h
+string
+-
+vector
+-
+tuple
+-
+functional
+-
+OpenGP/headeronly.h
+-
+OpenGP/types.h
+-
+OpenGP/GL/EventProvider.h
+-
+OpenGP/GL/glfw.h
+-
+Window.cpp
+../common/../external/OpenGP/src/OpenGP/GL/Window.cpp
+
 ../common/../external/OpenGP/src/OpenGP/GL/check_error_gl.h
 OpenGP/GL/gl.h
 -
@@ -170,6 +244,12 @@ GL/glew.h
 GL/gl.h
 -
 GL/glext.h
+-
+
+../common/../external/OpenGP/src/OpenGP/GL/gl_debug.h
+iostream
+-
+OpenGP/GL/gl.h
 -
 
 ../common/../external/OpenGP/src/OpenGP/GL/gl_types.h
@@ -1450,6 +1530,10 @@ OpenGP/SurfaceMesh/SurfaceMesh.h
 OpenGP/external/LodePNG/lodepng.cpp
 /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/transform/Mesh/OpenGP/external/LodePNG/lodepng.cpp
 
+/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/transform/line_fshader.glsl
+
+/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/transform/line_vshader.glsl
+
 /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/transform/main.cpp
 OpenGP/GL/Eigen.h
 /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/transform/OpenGP/GL/Eigen.h
@@ -1457,8 +1541,14 @@ OpenGP/GL/glfw_helpers.h
 /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/transform/OpenGP/GL/glfw_helpers.h
 Mesh/Mesh.h
 /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/transform/Mesh/Mesh.h
-math.h
+OpenGP/GL/Application.h
 -
+fstream
+-
+line_vshader.glsl
+/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/transform/line_vshader.glsl
+line_fshader.glsl
+/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/transform/line_fshader.glsl
 
 /usr/local/include/GL/glew.h
 stddef.h

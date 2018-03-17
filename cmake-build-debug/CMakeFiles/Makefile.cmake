@@ -47,6 +47,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../common/OpenGL.cmake"
   "../common/OpenGP.cmake"
   "../common/config.cmake"
+  "../mouse/CMakeLists.txt"
   "../transform/CMakeLists.txt"
   )
 
@@ -60,6 +61,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "transform/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "mouse/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -67,4 +69,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/update_opengp.dir/DependInfo.cmake"
   "CMakeFiles/common_headers.dir/DependInfo.cmake"
   "transform/CMakeFiles/transform.dir/DependInfo.cmake"
+  "mouse/CMakeFiles/mouse.dir/DependInfo.cmake"
   )

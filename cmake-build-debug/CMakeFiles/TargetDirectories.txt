@@ -5,3 +5,6 @@
 /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/transform/CMakeFiles/rebuild_cache.dir
 /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/transform/CMakeFiles/edit_cache.dir
 /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/transform/CMakeFiles/transform.dir
+/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/mouse/CMakeFiles/rebuild_cache.dir
+/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/mouse/CMakeFiles/edit_cache.dir
+/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/mouse/CMakeFiles/mouse.dir

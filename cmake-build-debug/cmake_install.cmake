@@ -30,6 +30,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/transform/cmake_install.cmake")
+  include("/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/mouse/cmake_install.cmake")
 
 endif()
 

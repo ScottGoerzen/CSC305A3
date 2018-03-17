@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debu
 CMakeFiles/update_opengp.dir/all:
 	$(MAKE) -f CMakeFiles/update_opengp.dir/build.make CMakeFiles/update_opengp.dir/depend
 	$(MAKE) -f CMakeFiles/update_opengp.dir/build.make CMakeFiles/update_opengp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/CMakeFiles --progress-num=3 "Built target update_opengp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/CMakeFiles --progress-num=5 "Built target update_opengp"
 .PHONY : CMakeFiles/update_opengp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -148,7 +148,7 @@ transform/preinstall:
 transform/CMakeFiles/transform.dir/all:
 	$(MAKE) -f transform/CMakeFiles/transform.dir/build.make transform/CMakeFiles/transform.dir/depend
 	$(MAKE) -f transform/CMakeFiles/transform.dir/build.make transform/CMakeFiles/transform.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target transform"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target transform"
 .PHONY : transform/CMakeFiles/transform.dir/all
 
 # Include target in all.
@@ -175,6 +175,61 @@ transform/CMakeFiles/transform.dir/clean:
 
 # clean rule for target.
 clean: transform/CMakeFiles/transform.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory mouse
+
+# Convenience name for "all" pass in the directory.
+mouse/all: mouse/CMakeFiles/mouse.dir/all
+
+.PHONY : mouse/all
+
+# Convenience name for "clean" pass in the directory.
+mouse/clean: mouse/CMakeFiles/mouse.dir/clean
+
+.PHONY : mouse/clean
+
+# Convenience name for "preinstall" pass in the directory.
+mouse/preinstall:
+
+.PHONY : mouse/preinstall
+
+#=============================================================================
+# Target rules for target mouse/CMakeFiles/mouse.dir
+
+# All Build rule for target.
+mouse/CMakeFiles/mouse.dir/all:
+	$(MAKE) -f mouse/CMakeFiles/mouse.dir/build.make mouse/CMakeFiles/mouse.dir/depend
+	$(MAKE) -f mouse/CMakeFiles/mouse.dir/build.make mouse/CMakeFiles/mouse.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target mouse"
+.PHONY : mouse/CMakeFiles/mouse.dir/all
+
+# Include target in all.
+all: mouse/CMakeFiles/mouse.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+mouse/CMakeFiles/mouse.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 mouse/CMakeFiles/mouse.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/scottgoerzen/Desktop/CSC_305/CSC305A3/cmake-build-debug/CMakeFiles 0
+.PHONY : mouse/CMakeFiles/mouse.dir/rule
+
+# Convenience name for target.
+mouse: mouse/CMakeFiles/mouse.dir/rule
+
+.PHONY : mouse
+
+# clean rule for target.
+mouse/CMakeFiles/mouse.dir/clean:
+	$(MAKE) -f mouse/CMakeFiles/mouse.dir/build.make mouse/CMakeFiles/mouse.dir/clean
+.PHONY : mouse/CMakeFiles/mouse.dir/clean
+
+# clean rule for target.
+clean: mouse/CMakeFiles/mouse.dir/clean
 
 .PHONY : clean
 
