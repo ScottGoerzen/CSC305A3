@@ -3,7 +3,7 @@
 ## Assignment 3
 
 ## Scott Goerzen
-###V00844662
+##V00844662
 
 For this assignment, a animation and a editable bezier curve window were created.
 
