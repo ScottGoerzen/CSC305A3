@@ -18,13 +18,15 @@ using namespace OpenGP;
 
 typedef Eigen::Transform<float,3,Eigen::Affine> Transform;
 
+//Init animation constants
 const int SUN_ROT_PERIOD = 30;        
 const int BIKE_ROT_PERIOD = 2;
 const int WHEEL_ROT_PERIOD = 1;
 const int MOON_ROT_PERIOD = 9;
 const int EARTH_ORBITAL_PERIOD = 10; 
 const int SPEED_FACTOR = 1;
-    
+
+//Init all meshes
 Mesh sun;
 Mesh background;
 Mesh moon;
@@ -53,7 +55,6 @@ void update() {
 }
 
 void display(){
-
     //read control points
     update();
 
@@ -102,8 +103,6 @@ void display(){
     wheel1_M *= Eigen::AlignedScaling3f(0.065, 0.065, 1.0);
     wheel2_M *= Eigen::AlignedScaling3f(0.065, 0.065, 1.0);
 
-
-
     // **** background transform
     Transform background_M = Transform::Identity();
 
@@ -134,7 +133,6 @@ void display(){
     wheel2.draw(wheel2_M.matrix());
 }
 
-
 int main(int, char**){
     //start animation
     glfwInitWindowSize(height, width);
@@ -159,7 +157,6 @@ void init(){
     bike.init();
     wheel1.init();
     wheel2.init();
-
 
     glClearColor(1,1,1, /*solid*/1.0 );
 

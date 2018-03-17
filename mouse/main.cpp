@@ -39,11 +39,12 @@ int main(int, char**){
 
         lineShader->bind();
 
-        // Draw line red
+        // Draw lines for control points
         lineShader->set_uniform("selection", -1);
         line->set_attributes(*lineShader);
         line->set_mode(GL_LINES);
         line->draw();
+        //Draw bezier curve
         line2->set_attributes(*lineShader);
         line2->set_mode(GL_LINE_STRIP);
         line2->draw();
@@ -68,6 +69,7 @@ int main(int, char**){
             selection->y() = position.y();
             line->set_vbo<Vec2>("vposition", controlPoints);
 
+            //recalculate bezier curve points
             std::vector<unsigned int> indices2;
             float division;
             for (int i = 0; i <= numParts; i++) {
@@ -78,6 +80,7 @@ int main(int, char**){
 
             line2->set_vbo<Vec2>("vposition", points);
 
+            //Print new control points to file
             std::ofstream file;
             file.open("controls.txt");
             file<<controlPoints[0].x()<<" "<<controlPoints[0].y()<<std::endl;
@@ -114,6 +117,7 @@ int main(int, char**){
                     std::cout<<controlPoints[i].x()<<","<<controlPoints[i].y()<<std::endl;
                 }
 
+                //recalculate bezier curve
                 std::vector<unsigned int> indices2;
                 float division;
                 for (int i = 0; i <= numParts; i++) {
@@ -139,6 +143,7 @@ void init(){
     lineShader->add_fshader_from_source(line_fshader);
     lineShader->link();
 
+    //establish inital control points for bezier curve
     controlPoints = std::vector<Vec2>();
     controlPoints.push_back(Vec2(-0.7f,-0.2f));
     controlPoints.push_back(Vec2(-0.3f, 0.2f));
@@ -146,7 +151,8 @@ void init(){
     controlPoints.push_back(Vec2( 0.7f, 0.0f));
 
     points = std::vector<Vec2>();
-    
+
+    //calculate inital bezier curve
     std::vector<unsigned int> indices2;
     float division;
     for (int i = 0; i <= numParts; i++) {
