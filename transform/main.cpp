@@ -49,6 +49,7 @@ void update() {
         controlPoints[i].y() = atof(input.c_str());
     }
     file.close();
+    
 }
 
 void display(){
